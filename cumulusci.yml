@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: fifth-test-project
+    package:
+        name: fifth-test-project
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/fifth-test-project/tests
+            options:
+                outputdir: robot/fifth-test-project/results
+
+    robot_testdoc:
+        options:
+            path: robot/fifth-test-project/tests
+            output: robot/fifth-test-project/doc/fifth-test-project_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
